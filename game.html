@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Depster@GAMES</title>
+		<script>
+			var count=0,ans=0,id,click=-1,counter=0,speed=1500;
+			
+			function myFunction1()
+			{
+				if(click==0)
+				{
+					var audio = document.getElementById("audio");
+					audio.play();
+					ans++;
+					click++;
+					document.getElementById("scorep").innerHTML="YOUR SCORE : "+ans+" kelas";
+				}
+			}
+			function myFunction4()
+			{
+				count=0;
+				alert("You got "+ans+ " kelas for catching me!!");
+				ans=0;
+				document.location.reload(true);
+			}
+			function myFunction2()
+			{
+				//alert("I knew it already!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				click=0;
+				var x=Math.random() * (1200 - 0) - 600;
+				var y=Math.random() * (700 - 0) - 350;
+				document.getElementById("ch").style.marginLeft=x+"px";
+				document.getElementById("ch").style.marginTop=y+"px";
+				count++;
+				if(count-ans==1)
+				{
+					document.getElementById("attemptp").innerHTML="ATTEMPTS LEFT : 2";
+				}
+				else if(count-ans==2)
+				{
+					document.getElementById("attemptp").innerHTML="ATTEMPTS LEFT : 1";
+				}
+				else if(count-ans==3)
+				{
+					document.getElementById("attemptp").innerHTML="ATTEMPTS LEFT : 0";
+					clearInterval(id);
+					myFunction4();
+				}
+				if(ans%10==0 && ans!=0)
+				{
+					clearInterval(id);
+					speed = speed-200;
+					id = setInterval(myFunction2,speed);
+				}
+			}
+			function myFunction3()
+			{
+				if(counter==0)
+				{
+					click=0;
+					id = setInterval(myFunction2,speed);
+					counter++;
+				}
+			}
+		</script>
+	</head>
+
+	<body background="retro.jpg" bgproperties="fixed">
+		</p><br><br><br><center><br><br><br><br><br><h1>CATCH ME IF YOU CAN</h1>
+		<p id="demo"></p><br><br><br>
+		<button type="button" onclick="myFunction3()">START</button><br><br>
+		<div id="ch" style="position: absolute; height:100px;  left:910px ; width:100px;">
+			<img src="sajan.png" onclick="myFunction1()">
+		</div>
+		<div id="score" style="position : absolute; left :1500px; top :800px; ">
+			<p id="scorep" style="font-size :30px;">YOUR SCORE : 0 kelas</p>
+		</div>
+		<div id="attempts" style="position : absolute; left :50px; top :800px; ">
+			<p id="attemptp" style="font-size :30px;">ATTEMPTS LEFT : 3</p>
+		</div>
+		<audio id="audio" src="sound.wav" ></audio>
+		
+	</body>
+</html>
+		

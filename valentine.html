@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Valentines Day</title>
+		<script>
+			function myFunction1()
+			{
+				alert("I knew it already!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+			}
+			function myFunction2()
+			{
+				//alert("I knew it already!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				var x=Math.random() * (600 - 0) - 300;
+				var y=Math.random() * (600 - 0) - 300;
+				document.getElementById("ch").style.marginLeft=x+"px";
+				document.getElementById("ch").style.marginTop=y+"px";
+			}
+		</script>
+	</head>
+
+	<body background="vday.jpg" bgproperties="fixed">
+		</p><br><br><br><br><br><br><br><center><br><br><br><br><br><h2>Will you be my valentine?</h2>
+		<p id="demo"></p>
+		<button type="button" onclick="myFunction1()">Yes</button><br><br>
+		<div id="ch" style="position: absolute; height:100px;  left:910px ; width:100px;">
+			<button id="b2" type="button" onmouseover="myFunction2()">No</button>
+		</div>
+			
+
+		
+	</body>
+</html>
+		
