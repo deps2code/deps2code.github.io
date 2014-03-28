@@ -27,8 +27,8 @@
 			{
 				//alert("I knew it already!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 				click=0;
-				var x=Math.random() * (1200 - 0) - 600;
-				var y=Math.random() * (700 - 0) - 350;
+				var x=Math.random() * (1000 - 0) - 500;
+				var y=Math.random() * (600 - 0) - 300;
 				document.getElementById("ch").style.marginLeft=x+"px";
 				document.getElementById("ch").style.marginTop=y+"px";
 				count++;
@@ -67,17 +67,18 @@
 
 	<body background="retro.jpg" bgproperties="fixed">
 		</p><br><br><br><center><br><br><br><br><br><h1>CATCH ME IF YOU CAN</h1>
-		<p id="demo"></p><br><br><br>
-		<button type="button" onclick="myFunction3()">START</button><br><br>
-		<div id="ch" style="position: absolute; height:100px;  left:910px ; width:100px;">
-			<img src="sajan.png" onclick="myFunction1()">
-		</div>
-		<div id="score" style="position : absolute; left :1500px; top :800px; ">
+		<p id="demo"></p>
+		<div style="100%" id="score" >
 			<p id="scorep" style="font-size :30px;">YOUR SCORE : 0 kelas</p>
 		</div>
-		<div id="attempts" style="position : absolute; left :50px; top :800px; ">
+		<div style="100%" id="attempts" >
 			<p id="attemptp" style="font-size :30px;">ATTEMPTS LEFT : 3</p>
 		</div>
+		<button type="button" onclick="myFunction3()">START</button><br><br>
+		<div style="100%" id="ch" >
+			<img src="sajan.png" onclick="myFunction1()">
+		</div>
+		
 		<audio id="audio" src="sound.wav" ></audio>
 		
 	</body>
